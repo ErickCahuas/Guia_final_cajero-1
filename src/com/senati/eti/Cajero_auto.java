@@ -4,14 +4,12 @@ import java.util.Scanner;
 import com.senati.eti.clase.Cajero;
 import com.senati.eti.clase.Suministros;
 
-
-
 public class Cajero_auto {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
-		// Transferencias, Cambio de clave ,cambio a dolar
+		// Cambio de clave ,cambio a dolar
 		
 		int min = 100, max = 999;
 		
@@ -57,6 +55,7 @@ public class Cajero_auto {
 	
 		do {
 			
+		System.out.println("\n");	
 		System.out.println("¿Que desea realizar?");
 		System.out.println("\n1. Crear una cuenta ");
 		System.out.println("2. Acceder a su cuenta");
@@ -134,6 +133,8 @@ public class Cajero_auto {
 					System.out.println("    3. Deposito en efectivo");
 					System.out.println("    4. Pago de servicio");
 					System.out.println("    5. Transferencia");
+					System.out.println("    6. Cambio de contraseña");
+					System.out.println("    7. Regresar al menú principal");
 					System.out.println("    8. Salir");
 					System.out.print("\nSeleccione una opción: " );
 					seleccion = sc.nextInt();
@@ -231,8 +232,10 @@ public class Cajero_auto {
 						System.out.println("\n");
 						System.out.println("<<<<<<<Transferencia>>>>>>>");
 						sc.nextLine();
-						System.out.println("Ingrese número de tarjeta: ");
+						System.out.print("Ingrese número de tarjeta: ");
 						String n_tarjeta2 = sc.nextLine();
+						
+						if ((n_tarjeta2.equals(cc.Codigo(n_tarjeta2, Cuentas))) && !n_tarjeta.equals(n_tarjeta2)) {
 						System.out.print("\nIngrese el monto a transferir: ");
 						retiro = sc.nextFloat();
 						if(retiro <= cc.saldo_actual(n_tarjeta, Cuentas)) {
@@ -241,18 +244,38 @@ public class Cajero_auto {
 						cc.deposito(n_tarjeta2, retiro, Cuentas);
 						}else 
 							System.out.println("Saldo insuficiente.....");
-						
+						}else {
+							System.out.println("Tarjeta no valida......");
+							rpta = "M";}
 						break;
 					case 6:
+						System.out.println("<<<<<<<Cambio de Contraseña>>>>>>>");
+						System.out.println("Ingrese su contraseña actual: ");
+						contra = sc.nextInt();
+						if(contra == (cc.pass(n_tarjeta, Cuentas))) {
+							do {
+								System.out.print("Ingrese nueva Contraseña(4 digitos): ");
+								contra = sc.nextInt();
+								 numDigits = String.valueOf(contra).length();
+								if(numDigits != 4)
+									System.out.println("Contraseña no valida, intente nuevamente");
+								}while(numDigits != 4);
+					    System.out.println("Su nueva contraseña es: " + cc.cambio_contra(n_tarjeta, contra, Cuentas));
+						}else {
+							System.out.println("Contraseña incorrecta");
+							rpta = "M";}
 						break;
 					case 7:
+						rpta = "N";
 						break;
 					case 8:
-						/*System.out.println("-----------------------------------------------------");
+						System.out.println("-----------------------------------------------------");
 						System.out.println("<<<<<<<<<< MUCHAS GRACIAS, VUELVA PRONTO >>>>>>>>>>");
-						System.out.println("-----------------------------------------------------");*/
-						break;
+						System.out.println("-----------------------------------------------------");	
+						return;
 						}
+				
+					
 					
 					if(seleccion < 1 || seleccion > 8) {
 						
@@ -260,38 +283,40 @@ public class Cajero_auto {
 						System.out.println("Opción no disponible, vuelva a intentar por favor....");
 						System.out.println("-----------------------------------------------------");
 					}
+					
 					sc.nextLine();
 					
 					do {
 					if (seleccion != 8) {
+						if (!rpta.equals("N")) {
 						System.out.print("\n¿Desea realizar otra operación[S|N]: ");
 					    rpta = sc.nextLine();
 					    if (!rpta.toUpperCase().equals("S") && !rpta.toUpperCase().equals("N"))
 					    System.out.println("<<<<<<<<Opción no valida>>>>>>>>");
-					}
+					}}
 					}while(!rpta.toUpperCase().equals("S") && !rpta.toUpperCase().equals("N"));
-					
-					sc.nextLine();
-					
+		
+					if (seleccion != 7) {
 					if ("S".equals(rpta.toUpperCase()))
 						seleccion = 9;
 					else if("N".equals(rpta.toUpperCase())) 
 						seleccion = 8;
-					
-				} while (seleccion < 1 || seleccion > 8);
-		
+					}
+				} while (seleccion < 1 || seleccion > 8 );
+
 		    }else {
              System.out.println("Contraseña no valida.....");
              System.out.println("Quedan " + ((contador - 2)* -1) + " intentos");
              contador++;
-		    
+            
 		    }}}while(contador > 0 && contador != 3);
-		
+	
+		if(seleccion != 7) {
 		System.out.println("-----------------------------------------------------");
 		System.out.println("<<<<<<<<<< MUCHAS GRACIAS, VUELVA PRONTO >>>>>>>>>>");
 		System.out.println("-----------------------------------------------------");	
 		return;
-		
+		}
 		}else if(opc == 3) {
 			System.out.println("-----------------------------------------------------");
 			System.out.println("<<<<<<<<<< MUCHAS GRACIAS, VUELVA PRONTO >>>>>>>>>>");
@@ -299,8 +324,6 @@ public class Cajero_auto {
 		}
 		else
 			System.out.println("Operacion no valida, intente nuevamente");
-		sc.nextLine();
 		}while(opc != 3);
-
 		}
 }

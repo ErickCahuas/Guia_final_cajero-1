@@ -85,6 +85,22 @@ public class Cajero {
         return r;
 	}
 	
+	public int cambio_contra(String n_tarj,int new_pass, ArrayList<Cajero>Cuentas) {
+        int r = 0;
+	    
+        for(int f = 0; f < Cuentas.size(); f++) {
+            if(Cuentas.get(f).Tarjeta().equals(n_tarj)) {
+            	Cuentas.get(f).setContraseñas(new_pass);
+                r = Cuentas.get(f).Contraseña();
+            }}
+        return r;
+        
+	}
+	
+	
+	
+	
+	
 	public String Titular() {
 		return this.nombre;
 	}
@@ -141,6 +157,7 @@ public class Cajero {
 	        return r;
 		}
 	
+	 
 	
 	
 	
