@@ -114,7 +114,6 @@ public class Cajero_auto {
 			System.out.println("-----------------------------------------------------");
 			return;
 		}
-		
 		int contador = 0;
 		do {
 		if (n_tarjeta.equals(cc.Codigo(n_tarjeta, Cuentas))) {
@@ -126,9 +125,7 @@ public class Cajero_auto {
 		    	System.out.println("****************************");
 		    	System.out.print("\nNombre del titular....: " + cc.nom(n_tarjeta, Cuentas));
 		    	System.out.println("\nSaldo disponible: " + cc.saldo_actual(n_tarjeta, Cuentas));
-		    
-			
-			
+		    	
 				do {
 					System.out.println("\n");
 					System.out.println("   \n¿Que operación desea realizar?");
@@ -142,8 +139,6 @@ public class Cajero_auto {
 					System.out.println("    8. Salir");
 					System.out.print("\nSeleccione una opción: " );
 					seleccion = sc.nextInt();
-					
-					
 					
 					switch(seleccion) {
 					case 1:
@@ -303,8 +298,6 @@ public class Cajero_auto {
 						return;
 						}
 				
-					
-					
 					if(seleccion < 1 || seleccion > 8) {
 						
 						System.out.println("-----------------------------------------------------");
