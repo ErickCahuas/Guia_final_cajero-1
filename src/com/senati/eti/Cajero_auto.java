@@ -1,4 +1,6 @@
 package com.senati.eti;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 import com.senati.eti.clase.Cajero;
@@ -9,24 +11,26 @@ public class Cajero_auto {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
-		// Cambio de clave ,cambio a dolar
-		
 		int min = 100, max = 999;
 		
-		Cajero objCu1 = new Cajero("981-189",2478, "Victor Marquina", 500);
-		Cajero objCu2 = new Cajero("125-485",7845,"Angel Flores", 800);
-		Cajero objCu3 = new Cajero("123-798", 1265,"Juan Benavides", 920);
-		Cajero objCu4 = new Cajero("369-852", 7891,"Israel Montes", 131);
+		Cajero objCu1 = new Cajero("981-189",2478, "Victor Marquina", 500, 0, 0);
+		Cajero objCu2 = new Cajero("125-485",7845,"Angel Flores", 800, 0, 0);
+		Cajero objCu3 = new Cajero("123-798", 1265,"Juan Benavides", 920, 0, 0);
+		Cajero objCu4 = new Cajero("369-852", 7891,"Israel Montes", 131, 0, 0);
 		
 		Cajero cc = new Cajero();
 		String rpta = "";
 		int opc = 0, numDigits=0;
 		int seleccion = 0;
+		float retiro = 0, deposito = 0;
+		FileWriter Consulta = null;
+		PrintWriter pw = null;
+		
 
 		// Variable del Array
 		String tarjeta = "", nombre = "";
 		int contraseña = 0;
-		float Saldo = 0;
+		float Saldo = 0, ret= 0, dep = 0;
 
 		ArrayList<Cajero>Cuentas = new ArrayList<Cajero>();
 	
@@ -44,7 +48,7 @@ public class Cajero_auto {
 		Sum.add(Sum2);
 
 		// Lectura de datos
-		String n_tarjeta = "";
+		String n_tarjeta = "" ;
 		int contra = 0;
 		
 		
@@ -52,9 +56,9 @@ public class Cajero_auto {
 		System.out.println("<<<<<<<<<<CAJERO AUTOMATICO>>>>>>>>>");
 		System.out.println("------------------------------------");
 		
-	
+
 		do {
-			
+		
 		System.out.println("\n");	
 		System.out.println("¿Que desea realizar?");
 		System.out.println("\n1. Crear una cuenta ");
@@ -84,7 +88,7 @@ public class Cajero_auto {
 					System.out.println("Contraseña no valida, intente nuevamente");
 				}while(numDigits != 4);
 				Saldo = 0;
-				objCu5 = new Cajero (tarjeta, contraseña, nombre, Saldo);
+				objCu5 = new Cajero (tarjeta, contraseña, nombre, Saldo, ret, dep);
 				Cuentas.add(objCu5);
 
 					 sc.nextLine();
@@ -102,7 +106,7 @@ public class Cajero_auto {
 			
 			sc.nextLine();
 		System.out.print("Ingrese número de tarjeta: ");
-		n_tarjeta = sc.nextLine();
+		n_tarjeta = sc.nextLine();	
 		if (!(n_tarjeta.equals(cc.Codigo(n_tarjeta, Cuentas)))) {
 			System.out.println("Tarjeta incorrecta......");
 			System.out.println("-----------------------------------------------------");
@@ -128,7 +132,7 @@ public class Cajero_auto {
 				do {
 					System.out.println("\n");
 					System.out.println("   \n¿Que operación desea realizar?");
-					System.out.println("    1. Consulta de cuenta");
+					System.out.println("    1. Últimos Movimientos");
 					System.out.println("    2. Retiro en efectivo");
 					System.out.println("    3. Deposito en efectivo");
 					System.out.println("    4. Pago de servicio");
@@ -139,14 +143,36 @@ public class Cajero_auto {
 					System.out.print("\nSeleccione una opción: " );
 					seleccion = sc.nextInt();
 					
-					float retiro = 0, deposito = 0;
+					
 					
 					switch(seleccion) {
 					case 1:
-						System.out.println("\n");
-						System.out.println("<<<<<<<CONSULTA DEL SALDO>>>>>>>");
-						System.out.print("\nTitular....: " + cc.nom(n_tarjeta, Cuentas));
-						System.out.println("\nSaldo disponible: " + cc.saldo_actual(n_tarjeta, Cuentas));
+						try {
+							
+							Consulta = new FileWriter("info.txt", true);
+							pw = new PrintWriter(Consulta);
+							
+							pw.println("-------------------");
+							pw.println("Últimos Movimientos");
+							pw.println("-------------------");
+							pw.println("Titular.........: " + cc.nom(n_tarjeta, Cuentas));
+							pw.println("N° de tarjeta...: " + cc.Codigo(n_tarjeta, Cuentas));
+							pw.println("Saldo actual....: " + cc.saldo_actual(n_tarjeta, Cuentas));
+							pw.println("Último Retiro...: " + cc.getret(n_tarjeta, Cuentas));
+							pw.println("Último deposito.: " + cc.getdep(n_tarjeta, Cuentas));
+						
+						}catch(Exception e1) {
+							e1.printStackTrace();
+						}finally {
+							
+							try {
+								if (Consulta != null) Consulta.close();
+							}catch(Exception e2) {
+								e2.printStackTrace();
+							}
+							}
+						System.out.println("\n<<<<<<<El voucher fue impreso exitosamente>>>>>>>");
+						rpta = "M";
 						break;
 					case 2:
 						System.out.println("\n");
@@ -154,7 +180,7 @@ public class Cajero_auto {
 						System.out.print("\n¿Cuanto desea retirar? : ");
 						retiro = sc.nextFloat();
 						if(retiro <= cc.saldo_actual(n_tarjeta, Cuentas)) {
-							System.out.println("Usted a retirado: " + retiro);
+							System.out.println("Usted a retirado: " + cc.ret(n_tarjeta, retiro, Cuentas));
 						    System.out.println("Su nuevo saldo es: "+ cc.retiro(n_tarjeta, retiro, Cuentas));
 						}else 
 							System.out.println("Saldo insuficiente.....");
@@ -165,10 +191,11 @@ public class Cajero_auto {
 						System.out.println("<<<<<<<DEPOSITO>>>>>>>");
 						System.out.print("\n¿Cuanto desea depositar? : ");
 						deposito = sc.nextFloat();
-							System.out.println("Usted a depositado: " + deposito);
+							System.out.println("Usted a depositado: " + cc.dep(n_tarjeta, deposito, Cuentas));
 						    System.out.println("Su nuevo saldo es: "+ cc.deposito(n_tarjeta, deposito, Cuentas));
 						    break;
 					case 4:
+						System.out.println("<<<<<<<Pago de Servicios>>>>>>>");
 						System.out.println("¿Que servicio desea pagar?");
 						System.out.println("      1. Agua");
 						System.out.println("      2. Luz");
@@ -190,16 +217,16 @@ public class Cajero_auto {
 							 if(elecc == 1) {
 								 retiro = sm.PagoAgua(n_sum, Sum);
 								 if(retiro <= cc.saldo_actual(n_tarjeta, Cuentas)) {
+									    cc.ret(n_tarjeta, retiro, Cuentas);
 										System.out.println("<<<<<<<PAGO REALIZADO>>>>>>>");
 									    System.out.println("Su nuevo saldo es: "+ cc.retiro(n_tarjeta, retiro, Cuentas));
 									    sm.Agua_actual(n_sum, Sum);
 									}else 
-										System.out.println("Saldo insuficiente.....");
-								 
+										System.out.println("Saldo insuficiente....."); 
 							 }
-						}else
-							 System.out.println("Suministro erroneo");
-						  break;
+						    }else
+							       System.out.println("Suministro erroneo");
+						           break;
 						
 						 case 2:
 							 int n_sum2 = 0;
@@ -215,12 +242,12 @@ public class Cajero_auto {
 							 if(elecc == 1) {
 								 retiro = sm.PagoLuz(n_sum2, Sum);
 								 if(retiro <= cc.saldo_actual(n_tarjeta, Cuentas)) {
+									    cc.ret(n_tarjeta, retiro, Cuentas);
 										System.out.println("<<<<<<<PAGO REALIZADO>>>>>>>");
 									    System.out.println("Su nuevo saldo es: "+ cc.retiro(n_tarjeta, retiro, Cuentas));
 									    sm.Luz_actual(n_sum2, Sum);
 									}else 
 										System.out.println("Saldo insuficiente.....");
-								 
 							 }
 						}else
 							 System.out.println("Suministro erroneo");
@@ -239,9 +266,10 @@ public class Cajero_auto {
 						System.out.print("\nIngrese el monto a transferir: ");
 						retiro = sc.nextFloat();
 						if(retiro <= cc.saldo_actual(n_tarjeta, Cuentas)) {
-							System.out.println("Usted a transferido: " + retiro);
+							System.out.println("Usted a transferido: " + cc.ret(n_tarjeta, retiro, Cuentas));
 						    System.out.println("Su nuevo saldo es: "+ cc.retiro(n_tarjeta, retiro, Cuentas));
-						cc.deposito(n_tarjeta2, retiro, Cuentas);
+						    cc.dep(n_tarjeta2, retiro, Cuentas);
+						    cc.deposito(n_tarjeta2, retiro, Cuentas);
 						}else 
 							System.out.println("Saldo insuficiente.....");
 						}else {

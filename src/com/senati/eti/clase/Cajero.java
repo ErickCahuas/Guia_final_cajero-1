@@ -9,10 +9,28 @@ public class Cajero {
 	private int contraseñas;
 	private String nombre;
 	private float saldo;
+	private float retiro;
+	private float deposito;
 	private ArrayList<Cajero>Cuentas = new ArrayList<Cajero>();
 	
 
 	
+	public float getRetiro() {
+		return retiro;
+	}
+
+	public void setRetiro(float retiro) {
+		this.retiro = retiro;
+	}
+
+	public float getDeposito() {
+		return deposito;
+	}
+
+	public void setDeposito(float deposito) {
+		this.deposito = deposito;
+	}
+
 	public String getTarjetas() {
 		return tarjetas;
 	}
@@ -49,11 +67,14 @@ public class Cajero {
 	public Cajero() {
 	}
 
-	public Cajero(String tarjetas, int contraseñas, String nombre, float saldo) {
+	
+	public Cajero(String tarjetas, int contraseñas, String nombre, float saldo, float retiro, float deposito) {
 		this.tarjetas = tarjetas;
 		this.contraseñas = contraseñas;
 		this.nombre = nombre;
 		this.saldo = saldo;
+		this.retiro = retiro;
+		this.deposito = deposito;
 	}
 
 	public String Tarjeta () {
@@ -96,11 +117,6 @@ public class Cajero {
         return r;
         
 	}
-	
-	
-	
-	
-	
 	public String Titular() {
 		return this.nombre;
 	}
@@ -156,11 +172,71 @@ public class Cajero {
 	        }
 	        return r;
 		}
-	
 	 
-	
-	
-	
+	 public float ret () {
+		 return this.retiro;
+	 }
+	 
+public float ret (String n_tarj, float descuento, ArrayList<Cajero>Cuentas) {
+	 float r = 0;
+     for(int f = 0; f < Cuentas.size(); f++) {
+         if(Cuentas.get(f).Tarjeta().equals(n_tarj)) {
+         	Cuentas.get(f).setRetiro(descuento);
+         	r = Cuentas.get(f).ret();
+         }
+         
+     }
+     return r;
+}
+
+public float getret(String n_tarj, ArrayList<Cajero>Cuentas) {
+	 
+	float r = 0;
+     for(int f = 0; f < Cuentas.size(); f++) {
+         if(Cuentas.get(f).Tarjeta().equals(n_tarj)) {
+         	r = Cuentas.get(f).ret();
+         }
+         
+     }
+     return r;
+}
+
+
+public float dep () {
+	 return this.deposito;
+}
+
+public float dep (String n_tarj, float aumento, ArrayList<Cajero>Cuentas) {
+float r = 0;
+for(int f = 0; f < Cuentas.size(); f++) {
+    if(Cuentas.get(f).Tarjeta().equals(n_tarj)) {
+    	Cuentas.get(f).setDeposito(aumento);
+    	r = Cuentas.get(f).dep();
+    }
+    
+}
+return r;
+}
+
+public float getdep(String n_tarj, ArrayList<Cajero>Cuentas) {
+	 
+	float r = 0;
+     for(int f = 0; f < Cuentas.size(); f++) {
+         if(Cuentas.get(f).Tarjeta().equals(n_tarj)) {
+         	r = Cuentas.get(f).dep();
+         }
+         
+     }
+     return r;
+}
+
+
+
+
+
+
+
+
 }
 	
 	

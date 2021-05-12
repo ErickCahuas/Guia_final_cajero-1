@@ -1,0 +1,240 @@
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Juan Benavides
+N° de tarjeta...: 123-798
+Saldo actual....: 420.0
+Último Retiro...: 500.0
+Último deposito.: 500.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Juan Benavides
+N° de tarjeta...: 123-798
+Saldo actual....: 420.0
+Último Retiro...: 500.0
+Último deposito.: 0.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Victor Marquina
+N° de tarjeta...: 981-189
+Saldo actual....: 1000.0
+Último Retiro...: 500.0
+Último deposito.: 0.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Juan Benavides
+N° de tarjeta...: 123-798
+Saldo actual....: 420.0
+Último Retiro...: 500.0
+Último deposito.: 0.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Juan Benavides
+N° de tarjeta...: 123-798
+Saldo actual....: 420.0
+Último Retiro...: 500.0
+Último deposito.: 0.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Victor Marquina
+N° de tarjeta...: 981-189
+Saldo actual....: 1000.0
+Último Retiro...: 0.0
+Último deposito.: 500.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Israel Montes
+N° de tarjeta...: 369-852
+Saldo actual....: 31.0
+Último Retiro...: 100.0
+Último deposito.: 0.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Israel Montes
+N° de tarjeta...: 369-852
+Saldo actual....: 31.0
+Último Retiro...: 0.0
+Último deposito.: 100.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Juan Benavides
+N° de tarjeta...: 123-798
+Saldo actual....: 420.0
+Último Retiro...: 500.0
+Último deposito.: 0.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Juan Benavides
+N° de tarjeta...: 123-798
+Saldo actual....: 420.0
+Último Retiro...: 0.0
+Último deposito.: 500.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Victor Marquina
+N° de tarjeta...: 981-189
+Saldo actual....: 300.0
+Último Retiro...: 200.0
+Último deposito.: 0.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Victor Marquina
+N° de tarjeta...: 981-189
+Saldo actual....: 300.0
+Último Retiro...: 200.0
+Último deposito.: 0.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Victor Marquina
+N° de tarjeta...: 981-189
+Saldo actual....: 300.0
+Último Retiro...: 200.0
+Último deposito.: 0.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Juan Benavides
+N° de tarjeta...: 123-798
+Saldo actual....: 1120.0
+Último Retiro...: 200.0
+Último deposito.: 0.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Victor Marquina
+N° de tarjeta...: 981-189
+Saldo actual....: 200.0
+Último Retiro...: 300.0
+Último deposito.: 0.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Victor Marquina
+N° de tarjeta...: 981-189
+Saldo actual....: 200.0
+Último Retiro...: 300.0
+Último deposito.: 0.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Victor Marquina
+N° de tarjeta...: 981-189
+Saldo actual....: 350.0
+Último Retiro...: 150.0
+Último deposito.: 0.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Victor Marquina
+N° de tarjeta...: 981-189
+Saldo actual....: 350.0
+Último Retiro...: 150.0
+Último deposito.: 0.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Victor Marquina
+N° de tarjeta...: 981-189
+Saldo actual....: 350.0
+Último Retiro...: 150.0
+Último deposito.: 0.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Juan Benavides
+N° de tarjeta...: 123-798
+Saldo actual....: 1070.0
+Último Retiro...: 150.0
+Último deposito.: 0.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Victor Marquina
+N° de tarjeta...: 981-189
+Saldo actual....: 250.0
+Último Retiro...: 250.0
+Último deposito.: 0.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Victor Marquina
+N° de tarjeta...: 981-189
+Saldo actual....: 250.0
+Último Retiro...: 250.0
+Último deposito.: 0.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Victor Marquina
+N° de tarjeta...: 981-189
+Saldo actual....: 250.0
+Último Retiro...: 250.0
+Último deposito.: 0.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Juan Benavides
+N° de tarjeta...: 123-798
+Saldo actual....: 1170.0
+Último Retiro...: 250.0
+Último deposito.: 0.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Victor Marquina
+N° de tarjeta...: 981-189
+Saldo actual....: 400.0
+Último Retiro...: 100.0
+Último deposito.: 0.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Victor Marquina
+N° de tarjeta...: 981-189
+Saldo actual....: 500.0
+Último Retiro...: 100.0
+Último deposito.: 100.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Victor Marquina
+N° de tarjeta...: 981-189
+Saldo actual....: 300.0
+Último Retiro...: 200.0
+Último deposito.: 100.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Juan Benavides
+N° de tarjeta...: 123-798
+Saldo actual....: 1120.0
+Último Retiro...: 0.0
+Último deposito.: 200.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Victor Marquina
+N° de tarjeta...: 981-189
+Saldo actual....: 300.0
+Último Retiro...: 200.0
+Último deposito.: 100.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: Victor Marquina
+N° de tarjeta...: 981-189
+Saldo actual....: 464.5
+Último Retiro...: 35.5
+Último deposito.: 0.0
