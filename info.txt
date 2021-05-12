@@ -238,3 +238,19 @@ N° de tarjeta...: 981-189
 Saldo actual....: 464.5
 Último Retiro...: 35.5
 Último deposito.: 0.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: TULON
+N° de tarjeta...: 743-663
+Saldo actual....: 400.0
+Último Retiro...: 0.0
+Último deposito.: 400.0
+-------------------
+Últimos Movimientos
+-------------------
+Titular.........: TULON
+N° de tarjeta...: 743-663
+Saldo actual....: 364.5
+Último Retiro...: 35.5
+Último deposito.: 400.0

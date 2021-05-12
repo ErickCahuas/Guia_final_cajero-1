@@ -179,6 +179,7 @@ public class Cajero_auto {
 						    System.out.println("Su nuevo saldo es: "+ cc.retiro(n_tarjeta, retiro, Cuentas));
 						}else 
 							System.out.println("Saldo insuficiente.....");
+						rpta = "M";
 						break;
 					
 					case 3:
@@ -188,6 +189,7 @@ public class Cajero_auto {
 						deposito = sc.nextFloat();
 							System.out.println("Usted a depositado: " + cc.dep(n_tarjeta, deposito, Cuentas));
 						    System.out.println("Su nuevo saldo es: "+ cc.deposito(n_tarjeta, deposito, Cuentas));
+						    rpta = "M";
 						    break;
 					case 4:
 						System.out.println("<<<<<<<Pago de Servicios>>>>>>>");
